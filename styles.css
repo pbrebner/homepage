@@ -1,7 +1,98 @@
 /* Stylesheet for Homepage */
 
+/* General */
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* About me Section */
+
+.aboutSection {
+    display: flex;
+}
+
+.aboutImage {
+    background-color: bisque;
+    height: 400px;
+    width: 300px;
+}
+
+.aboutText {
+    padding: 30px;
+    max-width: 500px;
+    border: 2px solid black;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* My Work Section */
+
+.projects {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.project {
+    border: 1px solid black;
+}
+
+.projectImage {
+    background-color: bisque;
+    height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectInfo {
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projectHeading {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Contact Section */
+
+.contactSection {
+    display: flex;
+    gap: 30px;
+}
+
+.contactText {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contactImage {
+    background-color: bisque;
+    height: 300px;
+    width: 400px;
 }
