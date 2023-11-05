@@ -28,9 +28,7 @@ h2 {
 }
 
 .aboutImage {
-    background-color: bisque;
     height: 400px;
-    width: 300px;
 }
 
 .aboutText {
@@ -121,7 +119,5 @@ h2 {
 }
 
 .contactImage {
-    background-color: bisque;
     height: 300px;
-    width: 400px;
 }
