@@ -9,36 +9,68 @@
 }
 
 .body {
-    padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
 
     font-family: "Roboto", sans-serif;
 }
 
+section {
+    padding: 50px;
+}
+
 h2 {
     font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 1.6rem;
 }
 
 /* About me Section */
 
 .aboutSection {
+    background: linear-gradient(
+        170deg,
+        rgb(38, 187, 224) 60%,
+        white calc(60% + 2px)
+    );
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/*
+.aboutBackground {
+    z-index: -1;
+    position: absolute;
+    background-color: rgb(38, 187, 224);
+    width: calc(2 * 100vw);
+    height: 1000px;
+    top: -51%;
+    rotate: -7deg;
+}
+*/
+
 .aboutImage {
-    height: 400px;
+    height: 350px;
 }
 
 .aboutText {
+    background-color: white;
     padding: 30px;
-    max-width: 500px;
-    border: 2px solid black;
+    box-shadow: 3px 3px 5px grey;
+
+    max-height: 300px;
+    max-width: 800px;
 
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.aboutIcons {
+    align-self: flex-end;
+    display: flex;
+    gap: 20px;
 }
 
 .aboutIcons img {
@@ -47,20 +79,34 @@ h2 {
 
 /* My Work Section */
 
+.projectSection {
+    display: flex;
+    justify-content: center;
+}
+
+.innerContainer {
+    flex: 1;
+    max-width: 1000px;
+}
+
 .projects {
     margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
 }
 
 .project {
-    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px grey;
 }
 
 .projectImage {
-    background-color: bisque;
-    height: 200px;
+    background-color: rgb(231, 93, 50);
+    min-height: 200px;
+    font-family: "Playfair Display", serif;
+    color: white;
+    font-size: 1.6rem;
 
     display: flex;
     align-items: center;
@@ -69,6 +115,7 @@ h2 {
 
 .projectInfo {
     padding: 15px;
+    min-height: 150px;
 
     display: flex;
     flex-direction: column;
@@ -77,18 +124,37 @@ h2 {
 
 .projectHeading {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+
+.projectName {
+    font-family: "Playfair Display", serif;
+    font-size: 1.1rem;
+}
+
+.projectIcons {
+    display: flex;
+    gap: 10px;
 }
 
 .projectIcons img {
     height: 20px;
 }
 
+.projectDescription {
+    font-size: 0.8rem;
+}
+
 /* Contact Section */
 
 .contactSection {
+    background-color: rgb(38, 187, 224);
+    color: white;
     display: flex;
     gap: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 .contactText {
@@ -114,8 +180,13 @@ h2 {
     align-items: center;
 }
 
+.contactIcons {
+    display: flex;
+    gap: 20px;
+}
+
 .contactIcons img {
-    height: 40px;
+    height: 30px;
 }
 
 .contactImage {
