@@ -1,6 +1,6 @@
 # Homepage
 
-![Image] (UI.png)
+![My Image](UI.png)
 
 ## About
 
