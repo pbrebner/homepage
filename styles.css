@@ -16,7 +16,7 @@
 }
 
 section {
-    padding: 50px;
+    padding: 20px;
 }
 
 h2 {
@@ -33,38 +33,93 @@ h2 {
         rgb(38, 187, 224) 60%,
         white calc(60% + 2px)
     );
+
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-/*
-.aboutBackground {
-    z-index: -1;
-    position: absolute;
-    background-color: rgb(38, 187, 224);
-    width: calc(2 * 100vw);
-    height: 1000px;
-    top: -51%;
-    rotate: -7deg;
+.aboutContainer {
+    display: grid;
+
+    grid-template-areas:
+        "image"
+        "header"
+        "text";
 }
-*/
+
+h1 {
+    padding: 5px;
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    z-index: 3;
+
+    grid-area: header;
+}
 
 .aboutImage {
-    height: 350px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    box-shadow: 2px 2px 4px grey;
+    z-index: 2;
+
+    max-width: 500px;
+    max-height: 400px;
+
+    grid-row: image / header;
+    grid-column: 1/-1;
+}
+
+@media (min-width: 540px) {
+    section {
+        padding: 50px;
+    }
+
+    .aboutContainer {
+        grid-template-areas:
+            "image image header header"
+            "image image text text"
+            "image image text text"
+            "image image text text";
+
+        grid-template-rows: 60px auto auto auto;
+    }
+
+    .aboutImage {
+        grid-area: image;
+    }
+}
+
+@media (min-width: 900px) {
+    .aboutContainer {
+        grid-template-areas:
+            "image image blank-top blank-top"
+            "image image text text"
+            "image image text text"
+            "image image text text"
+            "header header blank-bottom blank-bottom";
+
+        grid-template-rows: 60px auto auto auto 60px;
+    }
+
+    .aboutImage {
+        grid-row: image / header;
+    }
 }
 
 .aboutText {
     background-color: white;
     padding: 30px;
     box-shadow: 3px 3px 5px grey;
-
-    max-height: 300px;
-    max-width: 800px;
+    max-width: 780px;
 
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    grid-area: text;
 }
 
 .aboutIcons {
@@ -92,7 +147,7 @@ h2 {
 .projects {
     margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 30px;
 }
 
@@ -108,6 +163,7 @@ h2 {
     color: white;
     font-size: 1.6rem;
 
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,15 +205,18 @@ h2 {
 /* Contact Section */
 
 .contactSection {
+    padding: 0px;
     background-color: rgb(38, 187, 224);
     color: white;
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
 }
 
 .contactText {
+    padding: 50px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -190,5 +249,25 @@ h2 {
 }
 
 .contactImage {
-    height: 300px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 600px) {
+    .contactSection {
+        padding: 30px;
+        flex-direction: row;
+        gap: 0px;
+    }
+
+    .contactImage {
+        max-width: 240px;
+    }
+}
+
+@media (min-width: 900px) {
+    .contactImage {
+        max-width: 400px;
+    }
 }
